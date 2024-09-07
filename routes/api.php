@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\Auth\AuthenticationController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LectureController;
@@ -16,4 +17,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('/lecturers', LectureController::class);
     Route::resource('/courses', CourseController::class);
     Route::resource('/schedules', ScheduleController::class);
+    Route::resource('/attendances', AttendanceController::class);
 });
