@@ -118,6 +118,11 @@ class LectureController extends BaseController
     public function destroy(string $id)
     {
         $lecture = Lecture::find($id);
+
+        if (is_null($lecture)) {
+            return $this->sendError('Lecture not found.', [], 404);
+        }
+
         $lecture->delete();
 
         return $this->sendResponse([], 'Lecture deleted successfully.', 200);
