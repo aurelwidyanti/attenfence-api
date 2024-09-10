@@ -14,7 +14,7 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/users', [UserController::class, 'index']);
-    Route::resource('/lecturers', LectureController::class);
+    Route::resource('/lectures', LectureController::class);
     Route::resource('/courses', CourseController::class);
     Route::resource('/schedules', ScheduleController::class);
     Route::resource('/attendances', AttendanceController::class);
