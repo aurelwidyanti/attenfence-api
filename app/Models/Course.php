@@ -10,13 +10,13 @@ class Course extends Model
     use HasFactory;
     protected $fillable = [
         'code', 
-        'lecturer_id',
+        'lecture_id',
         'name', 
         'sks',
     ];
 
-    // Relasi dengan Lecturer
-    public function lecturer()
+    // Relasi dengan lecture
+    public function lecture()
     {
         return $this->belongsTo(Lecture::class);
     }
