@@ -16,9 +16,11 @@ class AttendanceResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'schedule_id' => $this->schedule_id,
             'user_id' => $this->user_id,
+            'schedule_id' => $this->schedule_id,
             'status' => $this->status,
+            'date' => $this->date,
+            'time' => $this->time,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'schedule' => new ScheduleResource($this->schedule),
