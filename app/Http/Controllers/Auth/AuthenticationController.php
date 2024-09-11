@@ -33,4 +33,14 @@ class AuthenticationController extends BaseController
             return $this->sendError('An error occurred.', ['error' => $e->getMessage()]);
         }
     }
+
+    public function logout(Request $request)
+    {
+        try {
+            $request->user()->currentAccessToken()->delete();
+            return $this->sendResponse([], 'User logout successfully.', 200);
+        } catch (\Exception $e) {
+            return $this->sendError('An error occurred.', ['error' => $e->getMessage()]);
+        }
+    }
 }

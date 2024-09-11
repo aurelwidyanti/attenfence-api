@@ -18,4 +18,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('/courses', CourseController::class);
     Route::resource('/schedules', ScheduleController::class);
     Route::resource('/attendances', AttendanceController::class);
+    Route::post('/logout', [AuthenticationController::class, 'logout']);
 });
